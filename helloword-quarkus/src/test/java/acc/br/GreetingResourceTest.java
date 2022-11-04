@@ -18,4 +18,13 @@ public class GreetingResourceTest {
              .body(is("Hello RESTEasy"));
     }
 
+    @Test
+    public void testHelloWordEndpoint() {
+        given()
+          .when().get("/helloworld")
+          .then()
+             .statusCode(200)
+             .body(is("Hello World"));
+    }
+
 }
