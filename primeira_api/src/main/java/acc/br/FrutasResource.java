@@ -7,6 +7,7 @@ import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -26,6 +27,14 @@ public class FrutasResource {
     @Transactional
     public void addFrutas(Fruta fruta) {
         fruta.persist();
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Transactional
+    public void update(Fruta fruta){
+        Fruta.update("nome = 'Mortal' where status = ?1", fruta.id);
+
     }
 
     @DELETE
