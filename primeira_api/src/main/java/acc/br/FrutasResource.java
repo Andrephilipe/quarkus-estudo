@@ -30,10 +30,9 @@ public class FrutasResource {
     }
 
     @PUT
-    @Path("/{id}")
     @Transactional
     public void update(Fruta fruta){
-        Fruta.update("nome = 'Mortal' where status = ?1", fruta.id);
+        Fruta.update("nome = ?1, qtd = ?2 where id = ?3", fruta.nome, fruta.qtd, fruta.id);
 
     }
 
