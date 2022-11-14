@@ -1,5 +1,4 @@
 package acc.br;
-
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -15,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 import acc.br.model.Fruta;
 
 @Path("/frutas")
-public class FrutasResource {
+public class FrutaResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
